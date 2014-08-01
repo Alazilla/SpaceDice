@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  char_name: MyString
+  user_id: 1
+  char_age: 1
+  char_str: 1
+  char_dex: 1
+
+two:
+  char_name: MyString
+  user_id: 1
+  char_age: 1
+  char_str: 1
+  char_dex: 1
