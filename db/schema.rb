@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140731214701) do
+ActiveRecord::Schema.define(version: 20140912212753) do
+
+  create_table "char_skills", force: true do |t|
+    t.integer  "skill_id"
+    t.integer  "char_id"
+    t.integer  "skill_rank"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "characters", force: true do |t|
     t.string   "char_name"
@@ -21,11 +29,27 @@ ActiveRecord::Schema.define(version: 20140731214701) do
     t.integer  "char_dex"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "char_kno"
+    t.integer  "char_mec"
+    t.integer  "char_per"
+    t.integer  "char_tec"
+    t.text     "char_desc"
+    t.text     "char_background"
+  end
+
+  create_table "skills", force: true do |t|
+    t.string   "skill_name"
+    t.string   "base_stat"
+    t.string   "skill_desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.string   "username"
-    t.string   "userpass"
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

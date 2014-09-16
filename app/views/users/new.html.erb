@@ -1,0 +1,40 @@
+<div class="container">
+
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<div class="text-center">
+<% if flash[:notice] %>
+  <div id = "notice"><% flash[:notice] %> </div>
+<% end %>
+    <h1>Create New Account</h1>
+    <%= link_to "Or log in", log_in_path %>
+</div>
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :class => "form-control input-lg" %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email, :class => "form-control input-lg" %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password, :class => "form-control input-lg" %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, :class => "form-control input-lg" %>
+  </p>
+  <%= submit_tag "Create Account", class: "btn btn-primary btn-block btn-lg" %>
+<% end %>
+</div>
