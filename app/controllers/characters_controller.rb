@@ -1,10 +1,6 @@
 class CharactersController < ApplicationController
 	def index
-		@users = Character.all
-	end
-
-	def mine
-		@characters = Character.where(:user_id == :current_user)
+		@characters = Character.all
 	end
 
 	def show
@@ -18,7 +14,7 @@ class CharactersController < ApplicationController
 	def create
 		@character = Character.new(char_params)
 	end
-	end
+
 
 	def edit
 
@@ -26,7 +22,8 @@ class CharactersController < ApplicationController
 
 	def destroy
 	end
-
+	
+private
 	def char_params
 		params.require(:character).permit(:user_id)
 	end

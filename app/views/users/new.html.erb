@@ -2,16 +2,15 @@
 
 <div class="row">
 <div class="col-md-6 col-md-offset-3">
+
 <div class="text-center">
-<% if flash[:notice] %>
-  <div id = "notice"><% flash[:notice] %> </div>
-<% end %>
+
+<%= form_for @user do |f| %>
     <h1>Create New Account</h1>
     <%= link_to "Or log in", log_in_path %>
-</div>
-<%= form_for @user do |f| %>
+
   <% if @user.errors.any? %>
-      <h2>Form is invalid</h2>
+      <h4>Form is invalid</h4>
       <ul>
         <% for message in @user.errors.full_messages %>
           <li><%= message %></li>

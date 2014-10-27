@@ -21,7 +21,7 @@
     		<span class="caret"></span>
 
  	 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1"> <%= link_to "Characters", my_chars_path %> </li>
+    <li role="presentation"><a role="menuitem" tabindex="-1"> <%= link_to "Characters", user_path(current_user) %> </li>
     <li role="presentation"><a role="menuitem" tabindex="-1"><%= link_to "Settings", edit_user_path(current_user) %></li>
     <li role="presentation" class="divider"></li>
     <li role="presentation"><a role="menuitem" tabindex="-1"><%= link_to "Sign Out", log_out_path %></a></li>

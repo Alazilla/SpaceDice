@@ -10,9 +10,11 @@ def create
   if @user.save
     redirect_to root_url, :notice => "Signed up!"
   else
-    render "new"
+    render "new", :notice => "My notice"
   end
 end
+
+
 
 def show
   @user = User.find(params[:id])
@@ -22,13 +24,13 @@ def edit
     @user = User.find(params[:id])
   end
 
-
+private
 def user_params
 	params.require(:user).permit(:name, :email, :password)
 end
 
-private
 def set_user
 	@user = User.find(params[:id])
 end
+
 end
